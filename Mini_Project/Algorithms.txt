@@ -1,0 +1,68 @@
+KEY GENERATION – TX
+
+	1. Input the string for generation and subsequently convert it into a numerical representation, which serves as the encryption key.
+	2. Translate the decimal representation into a binary format.
+	3. Sort the entire binary sequence and interchange the positions of the first and second halves.
+	4. Segment the binary value into groups of 8 bits each, followed by converting each group into its equivalent character representation.
+	5. The resulting set of characters constitutes the new decryption key utilized to decode the information.
+
+KEY GENERATION – RX
+	
+	1. Provide the new decryption key intended for deciphering the information.
+	2. Convert the characters of the key into binary form and concatenate them into a single string.
+	3. Interchange the positions of the first and second halves of the binary string, subsequently sorting the entire sequence.
+	4. Segment the binary string into chunks of 8 bits each, then translate these binary values into decimal equivalents.
+	5. Finally, employ this decimal value in the decryption algorithm to decode the encrypted information.
+
+
+ENCRYPTION ALGORITHM 
+	
+	1. Input the message.
+	2. Invoke the key generation function.
+	3. Obtain the key from the key generation function, which serves as the numerical value utilized in the encryption algorithm.
+	4. Convert each character in the message into its binary representation and aggregate all the binaries into a single binary string.
+	5. Derive the binary value of the binary string.
+	6. Convert this binary value into decimal.
+	7. Perform division of this decimal value by the key, resulting in a quotient and remainder.
+	8. Obtain the hash value of the key for verification purposes.
+	9. Transmit the binary values of the quotient, remainder, and hash value of the key, along with the length of the binary message.
+
+DECRYPTION ALGORITHM 
+	
+	1. Retrieve the encrypted data from the user or fetch it from the text file.
+	2. Obtain the new key from the key generation function.
+	3. Employ the split method to divide every value and store them in separate variables.
+	4. Convert the binary values of the remainder and the quotient into decimal.
+	5. Determine the key for decryption by multiplying the quotient with the key and adding the remainder.
+	6. Convert this value into binary and divide it into 8-bit binary values.
+	7. Convert each 8-bit binary value into its equivalent character.
+	8. Finally, the group of characters represents the original message.
+	9. Compare the hash value of the new key with the received key; if they match, display the original message; otherwise, indicate a mismatch.
+
+IMAGE ENCRYPTION ALGORITHM 
+
+	1. Acquire the message.
+	2. Obtain the key from the user.
+	3. Invoke the key generation function to generate a new key.
+	4. Execute the encryption algorithm.
+	5. Retrieve the encrypted data from the encryption algorithm.
+	6. Read the image.
+	7. Convert the image to grayscale.
+	8. Retrieve each decimal value of the encrypted data.
+	9. Convert these decimal values into binary and group them into a single string.
+	10. Divide the binary string into groups of 4 bits each and obtain the decimal values.
+	11. Embed these decimal values into the pixels of the grayscale image, preserving the remaining pixel values.
+	12. Save the modified image.
+
+IMAGE DECRYPTION ALGORITHM 
+	
+	1. Obtain the new key from the user.
+	2. Call the key generation function to retrieve the original key.
+	3. Read the encrypted image.
+	4. Retrieve the specific column values.
+	5. Convert these decimal pixel values into 4-bit binary and concatenate them into a single string.
+	6. Divide the binary string into groups of 8 bits each and obtain the decimal values.
+	7. Convert these decimal values into equivalent characters.
+	8. Feed the encrypted data into the decryption algorithm.
+	9. Display the decrypted result.
+
